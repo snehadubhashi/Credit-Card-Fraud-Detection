@@ -125,15 +125,11 @@ These metrics provide a better understanding of model performance on an imbalanc
 ```text
 Credit-Card-Fraud-Detection/
 │   
-│
-├── notebook/
-│   └── Credit_Card_Fraud_Detection.ipynb    
-│   └── creditcard.csv
-├── images/
-│
+├── Credit_Card_Fraud_Detection.ipynb
+├── creditcard.csv
 ├── README.md
 ├── requirements.txt
-└── LICENSE
+├
 ```
 
 ---
@@ -143,7 +139,7 @@ Credit-Card-Fraud-Detection/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/Credit-Card-Fraud-Detection.git
+git clone https://github.com/snehadubhashi/Credit-Card-Fraud-Detection.git
 ```
 
 ### 2. Navigate to the Project Folder
