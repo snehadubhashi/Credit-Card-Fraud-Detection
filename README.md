@@ -1,197 +1,271 @@
-# 💳 Credit Card Fraud Detection using Data Analysis & Random Forest
+# 💳 Credit Card Fraud Detection
+
+A machine learning project focused on identifying fraudulent credit card transactions using **Exploratory Data Analysis (EDA), data preprocessing, SMOTE, and Random Forest classification**.
+
+The project focuses not only on building a classification model, but also on understanding the challenges of **highly imbalanced financial transaction data** and selecting appropriate evaluation metrics.
+
+---
 
 ## 📌 Project Overview
 
-Credit card fraud is one of the biggest challenges faced by financial institutions. Detecting fraudulent transactions quickly helps reduce financial losses and improve customer security.
+Credit card fraud detection is a challenging classification problem because fraudulent transactions represent only a very small proportion of all transactions.
 
-In this project, I performed **Exploratory Data Analysis (EDA)** to understand the dataset and built a **Random Forest Classifier** to predict whether a transaction is fraudulent or legitimate.
+This project uses a dataset containing **284,807 transactions**, of which only **492 transactions are fraudulent**.
 
----
+The objective is to analyze transaction patterns and develop a machine learning model capable of identifying potentially fraudulent transactions.
 
-# 🎯 Problem Statement
+### 🎯 Objective
 
-The objective of this project is to analyze credit card transaction data, identify fraud patterns, and build a machine learning model capable of detecting fraudulent transactions.
-
-Since fraudulent transactions are very rare compared to legitimate transactions, the dataset is highly imbalanced, making fraud detection a challenging classification problem.
-
----
-
-# 📂 Dataset
-
-* **Dataset:** Credit Card Fraud Detection
-* **Source:** Kaggle
-* **Total Records:** 284,807 Transactions
-* **Fraudulent Transactions:** 492
-* **Legitimate Transactions:** 284,315
-
-The dataset contains anonymized numerical features generated using Principal Component Analysis (PCA) along with:
-
-* **Time**
-* **Amount**
-* **Class**
-
-  * 0 → Legitimate Transaction
-  * 1 → Fraudulent Transaction
+- Analyze transaction data and identify patterns associated with fraud
+- Perform Exploratory Data Analysis
+- Handle the severe class imbalance
+- Prepare the data for machine learning
+- Build a Random Forest classification model
+- Evaluate the model using multiple performance metrics
+- Identify important features contributing to model predictions
 
 ---
 
-# 🛠️ Technologies Used
+## 📊 Dataset
 
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
-* Scikit-learn
-* Jupyter Notebook
+The dataset contains **284,807 credit card transactions**.
 
----
+| Category | Count |
+|---|---:|
+| Total Transactions | 284,807 |
+| Legitimate Transactions | 284,315 |
+| Fraudulent Transactions | 492 |
 
-# 📊 Exploratory Data Analysis (EDA)
+The dataset is highly imbalanced, making fraud detection more challenging.
 
-The following analyses were performed:
-
-* Dataset overview
-* Data type inspection
-* Missing value analysis
-* Statistical summary
-* Class distribution analysis
-* Count Plot
-* Bar Plot
-* Histogram
-* Correlation Heatmap
+Because fraudulent transactions are rare, simply predicting most transactions as legitimate can result in high accuracy while still failing to detect fraud effectively.
 
 ---
 
-# 📈 Data Visualizations
+## 🔍 Exploratory Data Analysis
 
-The project includes the following visualizations:
+Exploratory Data Analysis was performed to understand:
 
-* Count Plot (Fraud vs Non-Fraud)
-* Bar Plot
-* Histogram
-* Correlation Heatmap
-* Confusion Matrix
-* ROC Curve
+- Transaction distribution
+- Class imbalance
+- Feature relationships
+- Statistical characteristics of the data
+- Differences between legitimate and fraudulent transactions
 
----
-
-# 🔍 Key Insights
-
-* The dataset is highly imbalanced, with fraudulent transactions representing only a very small fraction of all transactions.
-* Most transactions are legitimate, making fraud detection a challenging classification problem.
-* Correlation analysis helps understand relationships between the anonymized features and the target variable.
-* Since the dataset is imbalanced, evaluation metrics such as Precision, Recall, F1-score, and ROC-AUC are more meaningful than Accuracy alone.
+Visualizations were used to better understand the structure and patterns within the dataset.
 
 ---
 
-# 🤖 Machine Learning Model
+## ⚠️ Key Challenges
 
-The following machine learning model was used:
+### 1. Severe Class Imbalance
 
-* **Random Forest Classifier**
+Only **492 out of 284,807 transactions** are fraudulent.
 
-### Workflow
+This creates a significant imbalance between the two classes.
 
-1. Data Loading
-2. Data Exploration
-3. Data Visualization
-4. Feature Selection
-5. Train-Test Split
-6. Random Forest Model Training
-7. Prediction
-8. Model Evaluation
+### 2. Accuracy Can Be Misleading
+
+For an imbalanced dataset, a model can achieve very high accuracy while still failing to identify a significant number of fraudulent transactions.
+
+Therefore, model performance cannot be judged using accuracy alone.
+
+### 3. Choosing the Right Evaluation Metrics
+
+Precision, Recall and F1-Score are particularly important for evaluating fraud detection performance.
+
+- **Precision:** How many transactions predicted as fraud were actually fraudulent?
+- **Recall:** How many actual fraudulent transactions were successfully identified?
+- **F1-Score:** Balance between Precision and Recall.
 
 ---
 
-# 📊 Model Evaluation
+## 🛠️ Technologies & Tools
+
+- **Python**
+- **Pandas**
+- **NumPy**
+- **Matplotlib**
+- **Seaborn**
+- **Scikit-learn**
+- **SMOTE**
+- **Random Forest**
+- **Jupyter Notebook**
+
+---
+
+## 🔄 Project Workflow
+
+```text
+Dataset
+   ↓
+Data Understanding
+   ↓
+Exploratory Data Analysis
+   ↓
+Data Preprocessing
+   ↓
+Class Imbalance Handling
+   ↓
+Feature Preparation
+   ↓
+Random Forest Classification
+   ↓
+Model Evaluation
+   ↓
+Feature Importance Analysis
+⚙️ Methodology
+1. Data Understanding
+
+Inspected the dataset structure, features, data types and class distribution.
+
+2. Exploratory Data Analysis
+
+Analyzed transaction patterns and visualized the distribution of legitimate and fraudulent transactions.
+
+3. Data Preprocessing
+
+Prepared the dataset for machine learning and performed feature scaling where required.
+
+4. Handling Class Imbalance
+
+Applied SMOTE (Synthetic Minority Oversampling Technique) to address the imbalance between legitimate and fraudulent transactions.
+
+SMOTE generates synthetic examples of the minority class to provide the model with a more balanced training dataset.
+
+5. Model Building
+
+A Random Forest Classifier was used for fraud classification.
+
+The model was configured with 200 estimators.
+
+6. Model Evaluation
 
 The model was evaluated using:
 
-* Accuracy
-* Precision
-* Recall
-* F1 Score
-* Confusion Matrix
-* ROC-AUC Score
-* ROC Curve
+Accuracy
+Precision
+Recall
+F1-Score
+Confusion Matrix
+ROC-AUC
+📈 Model Performance
 
-These metrics provide a better understanding of model performance on an imbalanced dataset.
+The Random Forest model achieved the following results on the test set:
 
----
+Metric	Score
+Accuracy	99.95%
+Precision	86.32%
+Recall	83.67%
+F1-Score	84.97%
+Why Recall Matters
 
-# 📁 Project Structure
+For fraud detection, Recall is an important metric because it measures how many actual fraudulent transactions the model successfully identifies.
 
-```text
+The model achieved a Recall of 83.67%, meaning it identified a substantial proportion of the fraudulent transactions in the test data.
+
+However, the model should not be evaluated based on Recall alone. Precision and F1-Score were also considered to understand the balance between detecting fraud and generating false alerts.
+
+🔎 Feature Importance
+
+Feature importance analysis was performed using the Random Forest model to understand which features contributed most to the model's predictions.
+
+This provides additional interpretability beyond simply predicting whether a transaction is fraudulent.
+
+💡 Key Learnings
+
+Through this project, I strengthened my understanding of:
+
+Exploratory Data Analysis
+Data preprocessing
+Highly imbalanced datasets
+SMOTE and minority-class handling
+Classification algorithms
+Random Forest
+Precision, Recall and F1-Score
+Confusion Matrix
+ROC-AUC
+Feature importance
+Interpreting machine learning results
+Most Important Takeaway
+
+A key lesson from this project was that a high accuracy score does not necessarily mean a model is effective.
+
+The evaluation metric should be selected according to the actual problem and its business impact.
+
+For fraud detection, identifying fraudulent transactions effectively is more important than simply maximizing overall accuracy.
+
+🎯 Business Relevance
+
+Credit card fraud can result in financial losses for customers and financial institutions.
+
+A fraud detection system can help organizations:
+
+Identify suspicious transactions
+Detect potential fraudulent activity
+Reduce financial losses
+Improve transaction monitoring
+Support faster investigation of suspicious activity
+
+Machine learning can help analyze large volumes of transactions and identify patterns that may be difficult to detect manually.
+
+🚀 Future Improvements
+
+Possible improvements to this project include:
+
+Comparing Random Forest with other classification algorithms
+Hyperparameter tuning
+Additional feature engineering
+Experimenting with alternative approaches for imbalanced classification
+Improving model interpretability
+Deploying the model as an API or application
+📁 Project Structure
 Credit-Card-Fraud-Detection/
-│   
+│
 ├── Credit_Card_Fraud_Detection.ipynb
-├── creditcard.csv
 ├── README.md
 ├── requirements.txt
-├
-```
-
----
-
-# 🚀 How to Run
-
-### 1. Clone the Repository
-
-```bash
+└── creditcard.csv
+▶️ How to Run
+1. Clone the repository
 git clone https://github.com/snehadubhashi/Credit-Card-Fraud-Detection.git
-```
-
-### 2. Navigate to the Project Folder
-
-```bash
+2. Navigate to the project directory
 cd Credit-Card-Fraud-Detection
-```
-
-### 3. Install Required Libraries
-
-```bash
+3. Install dependencies
 pip install -r requirements.txt
-```
+4. Open the notebook
+jupyter notebook Credit_Card_Fraud_Detection.ipynb
 
-### 4. Open Jupyter Notebook
+Run the notebook cells sequentially to reproduce the analysis and model evaluation.
 
-```bash
-jupyter notebook
-```
+📓 Notebook
 
-### 5. Run the Notebook
+The complete implementation, including:
 
-Execute all cells in **Credit_Card_Fraud_Detection.ipynb**.
+Data exploration
+Visualizations
+Preprocessing
+SMOTE
+Random Forest
+Model evaluation
+Feature importance
 
----
+is available in:
 
-# 📌 Skills Demonstrated
+Credit_Card_Fraud_Detection.ipynb
 
-* Data Cleaning
-* Exploratory Data Analysis (EDA)
-* Data Visualization
-* Feature Analysis
-* Machine Learning
-* Random Forest Classification
-* Model Evaluation
-* Business Insight Generation
+🔗 Connect & Explore More
 
----
+🌐 Data Analytics Portfolio:
+https://snehadubhashi.github.io/
 
-# 📈 Future Improvements
+💻 GitHub:
+https://github.com/snehadubhashi/
 
-* Handle class imbalance using SMOTE
-* Compare multiple machine learning algorithms
-* Perform hyperparameter tuning
-* Analyze feature importance
-* Deploy the model using Flask or FastAPI
-* Build a real-time fraud detection system
+⭐ Project Focus
 
----
+Problem → Data → Analysis → Challenge → Solution → Evaluation → Insight
 
-# 👩‍💻 Author
+This project reflects my approach to learning through practical problem-solving rather than focusing only on model accuracy.
 
-**Sneha Dubhashi**
-
-If you found this project helpful, consider giving it a ⭐ on GitHub.
+If you find this project useful, feel free to ⭐ the repository.
