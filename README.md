@@ -14,11 +14,11 @@ This project uses a dataset containing **284,807 transactions**, of which only *
 
 The objective is to analyze transaction patterns and develop a machine learning model capable of identifying potentially fraudulent transactions.
 
-### 🎯 Objective
+### 🎯 Objectives
 
 - Analyze transaction data and identify patterns associated with fraud
-- Perform Exploratory Data Analysis
-- Handle the severe class imbalance
+- Perform Exploratory Data Analysis (EDA)
+- Handle severe class imbalance
 - Prepare the data for machine learning
 - Build a Random Forest classification model
 - Evaluate the model using multiple performance metrics
@@ -72,7 +72,7 @@ Therefore, model performance cannot be judged using accuracy alone.
 
 ### 3. Choosing the Right Evaluation Metrics
 
-Precision, Recall and F1-Score are particularly important for evaluating fraud detection performance.
+Precision, Recall, and F1-Score are particularly important for evaluating fraud detection performance.
 
 - **Precision:** How many transactions predicted as fraud were actually fraudulent?
 - **Recall:** How many actual fraudulent transactions were successfully identified?
@@ -82,15 +82,15 @@ Precision, Recall and F1-Score are particularly important for evaluating fraud d
 
 ## 🛠️ Technologies & Tools
 
-- **Python**
-- **Pandas**
-- **NumPy**
-- **Matplotlib**
-- **Seaborn**
-- **Scikit-learn**
-- **SMOTE**
-- **Random Forest**
-- **Jupyter Notebook**
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- SMOTE
+- Random Forest
+- Jupyter Notebook
 
 ---
 
@@ -117,7 +117,7 @@ Feature Importance Analysis
 ⚙️ Methodology
 1. Data Understanding
 
-Inspected the dataset structure, features, data types and class distribution.
+Inspected the dataset structure, features, data types, and class distribution.
 
 2. Exploratory Data Analysis
 
@@ -162,7 +162,7 @@ Why Recall Matters
 
 For fraud detection, Recall is an important metric because it measures how many actual fraudulent transactions the model successfully identifies.
 
-The model achieved a Recall of 83.67%, meaning it identified a substantial proportion of the fraudulent transactions in the test data.
+The model achieved a Recall of 83.67%, meaning it identified a substantial proportion of fraudulent transactions in the test data.
 
 However, the model should not be evaluated based on Recall alone. Precision and F1-Score were also considered to understand the balance between detecting fraud and generating false alerts.
 
@@ -182,12 +182,12 @@ Highly imbalanced datasets
 SMOTE and minority-class handling
 Classification algorithms
 Random Forest
-Precision, Recall and F1-Score
+Precision, Recall, and F1-Score
 Confusion Matrix
 ROC-AUC
 Feature importance
 Interpreting machine learning results
-Most Important Takeaway
+🎯 Most Important Takeaway
 
 A key lesson from this project was that a high accuracy score does not necessarily mean a model is effective.
 
@@ -254,7 +254,7 @@ is available in:
 
 Credit_Card_Fraud_Detection.ipynb
 
-🔗 Connect & Explore More
+🔗 Explore More
 
 🌐 Data Analytics Portfolio:
 https://snehadubhashi.github.io/
