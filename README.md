@@ -84,13 +84,19 @@ Confusion Matrix
 ROC Curve
 
 **Did SMOTE help?**
+
 Model	Precision	Recall	F1
-Random Forest without SMOTE	[ADD]	[ADD]	[ADD]
+
 Random Forest with SMOTE	86.3%	83.7%	0.85
-Limitations
+
+**Limitations**
+
 Features are anonymized, so the model's decisions cannot be tied to real transaction details such as merchant or location.
+
 98 fraud cases in the test set is small, so results may vary with a different split.
+
 The model was not tuned and was not compared against other algorithms.
+
 
 **Next Steps**
 
