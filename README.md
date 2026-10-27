@@ -1,5 +1,4 @@
-**Credit Card Fraud Detection using EDA and Random Forest
-**
+**Credit Card Fraud Detection using EDA and Random Forest**
 Detecting rare fraudulent transactions in a highly imbalanced dataset using Python, SMOTE, and a Random Forest classifier.
 
 **Results at a Glance**
