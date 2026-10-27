@@ -32,10 +32,15 @@ Banks lose money when fraudulent transactions go undetected, but blocking too ma
 **Dataset**
 
 Source: Credit Card Fraud Detection dataset on Kaggle
+
 Records: 284,807 transactions (284,315 legitimate, 492 fraudulent)
+
 Features: Time, Amount, and 28 anonymized numerical features (V1 to V28) produced by PCA
+
 Target: Class (0 = legitimate, 1 = fraud)
+
 Data quality: no missing values
+
 
 The dataset file (creditcard.csv) is too large for GitHub. Download it from the Kaggle link above and place it in the project folder.
 
@@ -127,4 +132,4 @@ Place creditcard.csv in the folder, then run all cells in Credit_Card_Fraud_Dete
 
 **Author**
 
-Sneha Dubhashi | LinkedIn | GitHub
+Sneha Dubhashi 
