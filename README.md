@@ -51,28 +51,28 @@ Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, imbalanced-learn (SMOT
 
 **Approach**
 
-**Explored the data:** checked shape, data types, missing values, and class distribution.
+Explored the data:checked shape, data types, missing values, and class distribution.
 
-**Visualized patterns:** class balance, transaction amount and time distributions, and a correlation heatmap.
+Visualized patterns: class balance, transaction amount and time distributions, and a correlation heatmap.
 
-**Split the data:** 80% train and 20% test, stratified so both sets keep the same fraud ratio.
+Split the data: 80% train and 20% test, stratified so both sets keep the same fraud ratio.
 
-**Scaled Time and Amount with StandardScaler** (fit on the training set only).
+Scaled Time and Amount with StandardScaler (fit on the training set only).
 
-**Handled class imbalance with SMOTE on the training set only,** balancing 394 fraud cases against 227,451 legitimate ones. The test set was left untouched to avoid data leakage.
+Handled class imbalance with SMOTE on the training set only, balancing 394 fraud cases against 227,451 legitimate ones. The test set was left untouched to avoid data leakage.
 
-**Trained a Random Forest** (200 trees) and evaluated it on the untouched test set.
+Trained a Random Forest (200 trees) and evaluated it on the untouched test set.
 
 
 **Key Findings**
 
-**Fraud is extremely rare:** only 0.17% of transactions are fraudulent, so the data needed rebalancing.
+Fraud is extremely rare: only 0.17% of transactions are fraudulent, so the data needed rebalancing.
 
-**Strongest correlations with fraud** are with the anonymized features V17 (-0.33), V14 (-0.30), V12 (-0.26), and V10 (-0.22).
+Strongest correlations with fraud are with the anonymized features V17 (-0.33), V14 (-0.30), V12 (-0.26), and V10 (-0.22).
 
-**Transaction amount has almost no linear relationship with fraud **(correlation 0.006), so amount alone cannot identify fraud.
+Transaction amount has almost no linear relationship with fraud (correlation 0.006), so amount alone cannot identify fraud.
 
-**Most important model features:** V14, V10, V4, V12, and V17. Because these features are anonymized, they cannot be explained in business terms.
+Most important model features: V14, V10, V4, V12, and V17. Because these features are anonymized, they cannot be explained in business terms.
 
 
 **Top 10 Features**
